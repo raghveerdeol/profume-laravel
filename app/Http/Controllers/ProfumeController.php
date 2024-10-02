@@ -22,7 +22,7 @@ class ProfumeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.profumes.create');
     }
 
     /**
