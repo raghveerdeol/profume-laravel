@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreProfumeRequest;
 use App\Models\Profume;
 use Illuminate\Http\Request;
 
@@ -28,17 +29,20 @@ class ProfumeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProfumeRequest $request)
     {
-        //
+        $data = $request->validated();
+        $profume = Profume::create($data);
+        $profume->save();
+        return redirect()->route('admin.profumes.show', compact('profume'));
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Profume $profume)
     {
-        //
+        return view('admin.profumes.show', compact('profume'));
     }
 
     /**
