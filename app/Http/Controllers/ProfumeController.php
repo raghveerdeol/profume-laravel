@@ -21,9 +21,9 @@ class ProfumeController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Profume $profume)
     {
-        return view('admin.profumes.create');
+        return view('admin.profumes.create', compact('profume'));
     }
 
     /**
@@ -55,9 +55,9 @@ class ProfumeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Profume $profume)
     {
-        //
+        return view('admin.profumes.edit', compact('profume'));
     }
 
     /**

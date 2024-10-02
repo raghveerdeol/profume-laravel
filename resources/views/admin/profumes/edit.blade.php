@@ -1,11 +1,11 @@
 @extends('layouts.profumes-layouts.create-update')
 
 @section('title')
-    Create profume
+    Update {{ $profume->name }}
 @endsection
 
 @section('form-action')
-    {{ route('admin.profumes.store') }}
+    {{ route('admin.profumes.update', compact('profume')) }}
 @endsection
 
 @section('form-method')
@@ -13,5 +13,5 @@
 @endsection
 
 @section('submit-button')
-    Add profume
+    Update {{ $profume->name }}
 @endsection

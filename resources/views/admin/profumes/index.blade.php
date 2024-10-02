@@ -31,6 +31,7 @@
                             </td>
                             <td>
                                 <a href="{{ route('admin.profumes.show', compact('profume')) }}" type="button" class="btn btn-primary">Show</a>
+                                <a href="{{ route('admin.profumes.edit', compact('profume')) }}" type="button" class="btn btn-success">Edit</a>
                             </td>
                         </tr>
                         @endforeach

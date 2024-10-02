@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="card col-8" style="width: 18rem;">
                 <img src="{{ asset('storage/'.$profume->image) }}" class="card-img-top" alt="{{ $profume->name }} image">
