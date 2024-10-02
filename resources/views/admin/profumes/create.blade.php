@@ -11,3 +11,7 @@
 @section('form-method')
     @method('POST')
 @endsection
+
+@section('submit-button')
+    Add profume
+@endsection

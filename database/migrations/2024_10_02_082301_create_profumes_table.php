@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('profumes', function (Blueprint $table) {
             $table->id();
             $table->string('name', 70);
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->decimal('price', 6, 2);
             $table->unsignedSmallInteger('quantity');
-            $table->string('brand', 100);
-            $table->binary('image');
+            $table->string('brand', 100)->nullable();
+            $table->binary('image')->nullable();
             $table->boolean('sponsored');
             $table->timestamps();
         });
