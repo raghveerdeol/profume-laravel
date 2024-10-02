@@ -29,3 +29,5 @@
 
 ![Diagramma](https://github.com/user-attachments/assets/e1604551-045e-4280-9a7a-ec2ed0683aa3)
 
+Milestone 1
+Create tables, models, seeder and controller.
