@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('brand', 100)->nullable();
             $table->string('image')->nullable();
             $table->boolean('sponsored');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

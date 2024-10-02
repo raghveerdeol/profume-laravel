@@ -76,8 +76,9 @@ class ProfumeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Profume $profume)
     {
-        //
+        $profume->delete();
+        return redirect()->route('admin.profumes.index');
     }
 }

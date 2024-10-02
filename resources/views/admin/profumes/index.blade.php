@@ -30,8 +30,14 @@
                                 @endif
                             </td>
                             <td>
-                                <a href="{{ route('admin.profumes.show', compact('profume')) }}" type="button" class="btn btn-primary">Show</a>
-                                <a href="{{ route('admin.profumes.edit', compact('profume')) }}" type="button" class="btn btn-success">Edit</a>
+                                <a href="{{ route('admin.profumes.show', $profume) }}" type="button" class="btn btn-primary btn-sm">Show</a>
+                                <a href="{{ route('admin.profumes.edit', $profume) }}" type="button" class="btn btn-success btn-sm">Edit</a>
+
+                                <form action="{{ route('admin.profumes.destroy', $profume) }}"  method="POST" class="d-inline-block form-deleter" >
+                                    @method('DELETE')
+                                    @csrf
+                                    <input type="submit" value="Delete" class="btn btn-warning btn-sm">
+                                </form>
                             </td>
                         </tr>
                         @endforeach
