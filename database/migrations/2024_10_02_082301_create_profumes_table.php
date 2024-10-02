@@ -18,7 +18,7 @@ return new class extends Migration
             $table->decimal('price', 6, 2);
             $table->unsignedSmallInteger('quantity');
             $table->string('brand', 100)->nullable();
-            $table->binary('image')->nullable();
+            $table->string('image')->nullable();
             $table->boolean('sponsored');
             $table->timestamps();
         });

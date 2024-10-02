@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-6">
-                <form method="POST" action="@yield('form-action')" class="form-selector">
+                <form method="POST" action="@yield('form-action')" class="form-selector" enctype="multipart/form-data">
                     @yield('form-method')
                     @csrf
 
@@ -46,13 +46,13 @@
                         </div>
                     @enderror
 
-                    <div class="form-check">
+                    <div class="form-check mt-2">
                         <input class="form-check-input" type="radio" name="sponsored" id="sponsored1" value="1">
                         <label class="form-check-label" for="sponsored1">
                             Sponsored
                         </label>
                     </div>
-                    <div class="form-check">
+                    <div class="form-check mb-2">
                         <input class="form-check-input" type="radio" name="sponsored" id="sponsored2" value="0" checked>
                         <label class="form-check-label" for="sponsored2">
                             Not Sponsored
@@ -77,7 +77,7 @@
                     </div>
                 @enderror
 
-                    <button class="btn btn-primary" type="submit">@yield('submit-button')</button>
+                    <button class="btn btn-primary mt-2 text-center" type="submit">@yield('submit-button')</button>
                 </form>
             </div>
         </div>

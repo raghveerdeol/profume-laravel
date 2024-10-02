@@ -32,6 +32,13 @@ class ProfumeController extends Controller
     public function store(StoreProfumeRequest $request)
     {
         $data = $request->validated();
+        if($request->hasFile('image')){
+            $img_path = $request->file('image')->store('uploads/image', 'public');
+            $data['image'] = $img_path;
+        } else {
+            $data['image'] = 'Image not found.';
+        }
+
         $profume = Profume::create($data);
         $profume->save();
         return redirect()->route('admin.profumes.show', compact('profume'));

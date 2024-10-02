@@ -27,7 +27,7 @@ class StoreProfumeRequest extends FormRequest
             'price' => ['required', 'decimal:2'],
             'quantity' => ['required', 'numeric'],
             'brand' => ['nullable', 'string', 'min:2', 'max:100'],
-            'image' => ['nullable', 'file'],
+            'image' => ['nullable'],
             'sponsored' => [ 'required', 'boolean'],
         ];
     }

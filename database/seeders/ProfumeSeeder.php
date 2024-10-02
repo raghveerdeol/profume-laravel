@@ -23,7 +23,7 @@ class ProfumeSeeder extends Seeder
                 'price' => $faker->randomFloat(2, 1, 1000),
                 'quantity' => $faker->randomNumber(4, false),
                 'brand' => $faker->name(),
-                'image' => $faker->image(null, 400, 600, 'profumes'),
+                'image' => $faker->imageUrl(null, 400, 600, 'profumes'),
                 'sponsored' => $faker->boolean()
             ]);
         }
