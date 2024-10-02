@@ -1,10 +1,10 @@
-@extends('layouts.app');
+@extends('layouts.app')
 
 @section('content')
 
     <div class="container">
-        <div class="row">
-            <div class="col-12">
+        <div class="row justify-content-center">
+            <div class="col-6">
                 <form method="POST" action="@yield('form-action')" class="form-selector">
                     @yield('form-method')
                     @csrf
