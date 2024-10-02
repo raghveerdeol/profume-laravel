@@ -9,7 +9,7 @@
 @endsection
 
 @section('form-method')
-    @method('POST')
+    @method('PUT')
 @endsection
 
 @section('submit-button')

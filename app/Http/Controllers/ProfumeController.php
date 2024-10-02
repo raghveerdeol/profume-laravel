@@ -63,9 +63,14 @@ class ProfumeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreProfumeRequest $request, Profume $profume)
     {
-        //
+        $data = $request->validated();
+        $img_path = $request->file('image')->store('uploads/image', 'public');
+        $data['image'] = $img_path;
+
+        $profume->update($data);
+        return redirect()->route('admin.profumes.show', compact('profume'));
     }
 
     /**
