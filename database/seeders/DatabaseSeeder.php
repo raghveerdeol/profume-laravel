@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ProfumeSeeder::class,
             ReviewSeeder::class,
+            CategorySeeder::class,
         ]);
     }
 }
