@@ -30,7 +30,18 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        {{-- profumes index link    --}}
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.profumes.index') }}">{{ __('Profumes') }}</a>
+                            </li>
+                        @endauth
+                        {{-- profume create link  --}}
+                        @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.profumes.create') }}">{{ __('Add Profume') }}</a>
+                        </li>
+                    @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
