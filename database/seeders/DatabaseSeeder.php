@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
             ProfumeSeeder::class,
             ReviewSeeder::class,
             CategorySeeder::class,
+            UserSeeder::class,
+            VoteSeeder::class,
         ]);
     }
 }
