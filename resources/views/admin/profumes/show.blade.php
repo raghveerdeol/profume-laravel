@@ -14,7 +14,7 @@
                     <h6><em>{{ $profume->brand }}</em></h6>
                     <p class="card-text">{{ $profume->description }}</p>
                     <p><strong>Quantity: {{ $profume->quantity }}</strong></p>
-                    <p><strong>Price: {{ $profume->price }}</strong></p>
+                    <p><strong>Price: {{ $profume->price }} £</strong></p>
 
                     @if ($profume->sponsored === 1)
                         <span class="badge text-bg-success">Sponsored</span>

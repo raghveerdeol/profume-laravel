@@ -9,6 +9,9 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
+            <div class="d-flex justify-content-center mb-3">
+                <a href="{{ route('admin.categories.create') }}" type="button" class="btn btn-primary">Add Category</a>
+            </div>
             <table class="table table-striped">
                 <thead>
                     <tr>

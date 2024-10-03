@@ -4,6 +4,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
+                <div class="d-flex justify-content-center mb-3">
+                    <a href="{{ route('admin.profumes.create') }}" type="button" class="btn btn-primary">Add Profume</a>
+                </div>
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -23,7 +26,7 @@
                             <td>{{ $profume->name }}</td>
                             <td>{{ $profume->brand }}</td>
                             <td>{{ $profume->quantity }}</td>
-                            <td>{{ $profume->price }}£</td>
+                            <td>{{ $profume->price }} £</td>
                             <td>
                                 @if ($profume->sponsored === 1)
                                     Sponsored
