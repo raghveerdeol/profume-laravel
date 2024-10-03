@@ -66,8 +66,12 @@ class ProfumeController extends Controller
     public function update(StoreProfumeRequest $request, Profume $profume)
     {
         $data = $request->validated();
-        $img_path = $request->file('image')->store('uploads/image', 'public');
-        $data['image'] = $img_path;
+        if($request->hasFile('image')){
+            $img_path = $request->file('image')->store('uploads/image', 'public');
+            $data['image'] = $img_path;
+        } else {
+            $data['image'] = $profume->image;
+        }
 
         $profume->update($data);
         return redirect()->route('admin.profumes.show', compact('profume'));
