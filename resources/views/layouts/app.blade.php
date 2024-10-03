@@ -36,12 +36,12 @@
                                 <a class="nav-link" href="{{ route('admin.profumes.index') }}">{{ __('Profumes') }}</a>
                             </li>
                         @endauth
-                        {{-- profume create link  --}}
+                        {{-- category link  --}}
                         @auth
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.profumes.create') }}">{{ __('Add Profume') }}</a>
-                        </li>
-                    @endauth
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.categories.index') }}">{{ __('Categories') }}</a>
+                            </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
