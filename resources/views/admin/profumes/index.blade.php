@@ -7,6 +7,7 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
+                            <th scope="col">Id</th>
                             <th scope="col">Name</th>
                             <th scope="col">Brand</th>
                             <th scope="col">Quantity</th>
@@ -18,6 +19,7 @@
                     <tbody>
                         @foreach ($profumes as $profume)
                         <tr>
+                            <td>{{ $profume->id }}</td>
                             <td>{{ $profume->name }}</td>
                             <td>{{ $profume->brand }}</td>
                             <td>{{ $profume->quantity }}</td>
