@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProfumeRequest;
 use App\Models\Profume;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProfumeController extends Controller
@@ -13,7 +14,8 @@ class ProfumeController extends Controller
      */
     public function index()
     {
-        $profumes = Profume::all();
+        $auth = auth()->user();
+        $profumes = Profume::all()->where('user_id', $auth->id);
 
         return view('admin.profumes.index', compact('profumes'));
     }
