@@ -64,8 +64,9 @@ class ProfumeController extends Controller
     public function edit(Profume $profume)
     {
         $auth = auth()->user();
-
-        return view('admin.profumes.edit', compact('profume', 'auth'));
+        if ($auth->id === $profume->user_id) {
+            return view('admin.profumes.edit', compact('profume', 'auth'));
+        }
     }
 
     /**
