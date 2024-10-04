@@ -52,7 +52,10 @@ class ProfumeController extends Controller
      */
     public function show(Profume $profume)
     {
-        return view('admin.profumes.show', compact('profume'));
+        $auth = auth()->user();
+        if ($auth->id === $profume->user_id) {
+            return view('admin.profumes.show', compact('profume'));
+        };
     }
 
     /**
