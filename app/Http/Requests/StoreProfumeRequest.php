@@ -29,6 +29,7 @@ class StoreProfumeRequest extends FormRequest
             'brand' => ['nullable', 'string', 'min:2', 'max:100'],
             'image' => ['nullable'],
             'sponsored' => [ 'required', 'boolean'],
+            'user_id' => ['required'],
         ];
     }
 }

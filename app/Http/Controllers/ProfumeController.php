@@ -25,7 +25,8 @@ class ProfumeController extends Controller
      */
     public function create(Profume $profume)
     {
-        return view('admin.profumes.create', compact('profume'));
+        $auth = auth()->user();
+        return view('admin.profumes.create', compact('profume', 'auth'));
     }
 
     /**
@@ -59,7 +60,9 @@ class ProfumeController extends Controller
      */
     public function edit(Profume $profume)
     {
-        return view('admin.profumes.edit', compact('profume'));
+        $auth = auth()->user();
+
+        return view('admin.profumes.edit', compact('profume', 'auth'));
     }
 
     /**

@@ -9,6 +9,8 @@
                     @yield('form-method')
                     @csrf
 
+                    <input type="text" name="user_id" value="{{ $auth->id }}" hidden>
+
                     <label for="name">Name</label>
                     <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="name" value="{{ old('name', $profume->name) }}">
 
