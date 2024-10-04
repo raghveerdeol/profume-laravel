@@ -66,7 +66,7 @@ class ProfumeController extends Controller
         $auth = auth()->user();
         if ($auth->id === $profume->user_id) {
             return view('admin.profumes.edit', compact('profume', 'auth'));
-        }
+        };
     }
 
     /**
@@ -91,7 +91,10 @@ class ProfumeController extends Controller
      */
     public function destroy(Profume $profume)
     {
+        $auth = auth()->user();
+        if ($auth->id === $profume->user_id) {
         $profume->delete();
         return redirect()->route('admin.profumes.index');
+        };
     }
 }
