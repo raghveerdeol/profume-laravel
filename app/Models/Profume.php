@@ -19,5 +19,11 @@ class Profume extends Model
         'brand',
         'image',
         'sponsored',
+        'user_id',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

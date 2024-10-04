@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
@@ -15,6 +16,7 @@ class ProfumeSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create();
+        $userIds = User::all()->pluck('id')->toArray();
 
         for ($i=0; $i < 10; $i++) {
             DB::table('profumes')->insert([
@@ -24,7 +26,8 @@ class ProfumeSeeder extends Seeder
                 'quantity' => $faker->randomNumber(4, false),
                 'brand' => $faker->name(),
                 'image' => $faker->imageUrl(null, 400, 600, 'profumes'),
-                'sponsored' => $faker->boolean()
+                'sponsored' => $faker->boolean(),
+                'user_id' => $userIds[array_rand($userIds)],
             ]);
         }
     }
