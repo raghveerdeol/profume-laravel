@@ -15,11 +15,17 @@ class Review extends Model
         'username',
         'e-mail',
         'review',
-        'profume_id'
+        'profume_id',
+        'client_id',
     ];
 
     public function profume()
     {
         return $this->belongsTo(Profume::class);
+    }
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
     }
 }
