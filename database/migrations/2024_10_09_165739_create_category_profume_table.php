@@ -12,13 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('category_profume', function (Blueprint $table) {
+            $table->id();
+
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
 
             $table->unsignedBigInteger('profume_id');
             $table->foreign('profume_id')->references('id')->on('profumes');
 
-            $table->primary(['category_id', 'profume_id']);
+            $table->timestamps();
         });
     }
 
