@@ -16,4 +16,9 @@ class Order extends Model
         'total',
         'state',
     ];
+
+    public function cart()
+    {
+        return $this->belongsTo(Cart::class);
+    }
 }
