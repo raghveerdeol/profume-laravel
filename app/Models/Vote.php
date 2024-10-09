@@ -13,4 +13,9 @@ class Vote extends Model
         'name',
         'vote',
     ];
+
+    public function profume()
+    {
+        return $this->belongsToMany(Profume::class);
+    }
 }

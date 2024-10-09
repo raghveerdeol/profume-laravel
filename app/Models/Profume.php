@@ -37,4 +37,9 @@ class Profume extends Model
     {
         return $this->belongsToMany(Category::class);
     }
+
+    public function vote()
+    {
+        return $this->belongsToMany(Vote::class);
+    }
 }
