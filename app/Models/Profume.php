@@ -42,4 +42,9 @@ class Profume extends Model
     {
         return $this->belongsToMany(Vote::class);
     }
+
+    public function cart()
+    {
+        return $this->belongsToMany(Cart::class);
+    }
 }

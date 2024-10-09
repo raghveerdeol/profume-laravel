@@ -14,4 +14,9 @@ class Cart extends Model
     protected $fillable = [
         'quantity',
     ];
+
+    public function profume()
+    {
+        return $this->belongsToMany(Profume::class);
+    }
 }
