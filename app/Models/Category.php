@@ -15,4 +15,9 @@ class Category extends Model
         'name',
         'description',
     ];
+
+    public function profume()
+    {
+        return $this->belongsToMany(Profume::class);
+    }
 }

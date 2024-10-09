@@ -32,4 +32,9 @@ class Profume extends Model
     {
         return $this->hasMany(Review::class);
     }
+
+    public function category()
+    {
+        return $this->belongsToMany(Category::class);
+    }
 }
