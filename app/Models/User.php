@@ -47,4 +47,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Profume::class);
     }
+
+    public function message(): HasMany
+    {
+        return $this->hasMany(Message::class);
+    }
 }
