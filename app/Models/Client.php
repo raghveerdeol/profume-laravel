@@ -31,8 +31,13 @@ class Client extends Model
         'email_verified_at' => 'datetime',
     ];
 
-    public function client()
+    public function review()
     {
-        return $this->hasMany(Client::class);
+        return $this->hasMany(Review::class);
+    }
+
+    public function message()
+    {
+        return $this->hasMany(Message::class);
     }
 }
