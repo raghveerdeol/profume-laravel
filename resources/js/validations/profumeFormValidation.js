@@ -1,63 +1,104 @@
-const nameElement = document.querySelector('input#name').value.trim();
-const priceElement = document.querySelector('input#price').value.trim();
-const quantityElement = document.querySelector('input#quantity').value.trim();
-const brandElement = document.querySelector('input#brand').value.trim();
-const imageElement = document.querySelector('input#image').value.trim();
-const descriptionElement = document.querySelector('textarea#description').value.trim();
 
-let hasError = false;
 
+
+const form = document.querySelector('form#form_error');
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const nameElement = document.querySelector('input#name').value.trim();
+    const priceElement = document.querySelector('input#price').value.trim();
+    const quantityElement = document.querySelector('input#quantity').value.trim();
+    const brandElement = document.querySelector('input#brand').value.trim();
+    const imageElement = document.querySelector('input#image').value.trim();
+    const descriptionElement = document.querySelector('textarea#description').value.trim();
+
+    let hasError = 0;
+
+    // call functions
+    const a = nameValidation(nameElement);
+    const b = priceValidation(priceElement);
+    const c = quantityValidation(quantityElement);
+    const d = brandValidation(brandElement);
+    const e = imageValidation(imageElement);
+    const f = descriptionValidation(descriptionElement);
+
+    if (a + b + c + d + e + f === 0) {
+        this.submit();
+    }
+
+})
+
+
+
+// validation functions
 // name input validation
-if ( nameElement && nameElement.length > 4 && nameElement.length < 70 ) {
-    hasError = false;
-} else {
-    hasError = true;
-    let nameErrorElement = document.querySelector('div#nameError');
-    nameErrorElement.classList.add('alert','alert-danger' ,'mt-2' , 'nameContent');
-};
+function nameValidation(name) {
+    let nameError = document.querySelector('div#nameError');
+    if ( name && name.length >= 4 && name.length <= 70 ) {
+        nameError.classList.remove('alert','alert-danger' ,'mt-2' , 'nameContent');
+        return 0;
+    } else {
+        nameError.classList.add('alert','alert-danger' ,'mt-2' , 'nameContent');
+        return 1;
+    };
+}
 
 // price input validation
-if ( priceElement ) {
-    hasError = false;
-} else {
-    hasError = true;
-    let priceErrorElement = document.querySelector('div#priceError');
-    priceErrorElement.classList.add('alert','alert-danger' ,'mt-2' , 'priceContent');
-};
+function priceValidation(price) {
+    let priceError = document.querySelector('div#priceError');
+    if ( price ) {
+        priceError.classList.remove('alert','alert-danger' ,'mt-2' , 'priceContent');
+        return 0;
+    } else {
+        priceError.classList.add('alert','alert-danger' ,'mt-2' , 'priceContent');
+        return 1;
+    };
+}
 
 // quantity input validation
-if ( Number.isInteger(quantityElement / 1) && quantityElement) {
-    console.log(quantityElement)
-    hasError = false;
-} else {
-    hasError = true;
-    let quantityErrorElement = document.querySelector('div#quantityError');
-    quantityErrorElement.classList.add('alert','alert-danger' ,'mt-2' , 'quantityContent');
-};
+function quantityValidation(quantity) {
+    let quantityError = document.querySelector('div#quantityError');
+    if ( Number.isInteger(quantity / 1) && quantity) {
+        quantityError.classList.remove('alert','alert-danger' ,'mt-2' , 'quantityContent');
+        return 0;
+    } else {
+        quantityError.classList.add('alert','alert-danger' ,'mt-2' , 'quantityContent');
+        return 1;
+    };
+}
 
 // brand input validation
-if ( brandElement && brandElement.length > 2 && brandElement.length < 100 ) {
-    hasError = false;
-} else {
-    hasError = true;
-    let brandErrorElement = document.querySelector('div#brandError');
-    brandErrorElement.classList.add('alert','alert-danger' ,'mt-2' , 'brandContent');
-};
+function brandValidation(brand) {
+    let brandError = document.querySelector('div#brandError');
+    if ( brand && brand.length >= 2 && brand.length <= 100 ) {
+        brandError.classList.remove('alert','alert-danger' ,'mt-2' , 'brandContent');
+        return 0;
+    } else {
+        brandError.classList.add('alert','alert-danger' ,'mt-2' , 'brandContent');
+        return 1;
+    };
+}
 
 // image input validation
-if ( imageElement ) {
-    hasError = false;
-} else {
-    hasError = true;
-    let imageErrorElement = document.querySelector('div#imageError');
-    imageErrorElement.classList.add('alert','alert-danger' ,'mt-2' , 'imageContent');
-};
+function imageValidation(image) {
+    let imageError = document.querySelector('div#imageError');
+    if ( image ) {
+        imageError.classList.remove('alert','alert-danger' ,'mt-2' , 'imageContent');
+        return 0;
+    } else {
+        imageError.classList.add('alert','alert-danger' ,'mt-2' , 'imageContent');
+        return 1;
+    };
+}
 
 // description input validation
-if ( descriptionElement ) {
-    hasError = false;
-} else {
-    hasError = true;
-    let descriptionErrorElement = document.querySelector('div#descriptionError');
-    descriptionErrorElement.classList.add('alert','alert-danger' ,'mt-2' , 'descriptionContent');
-};
+function descriptionValidation(description) {
+    let descriptionError = document.querySelector('div#descriptionError');
+    if ( description.length >= 10 && description.length <= 4000) {
+        descriptionError.classList.remove('alert','alert-danger' ,'mt-2' , 'descriptionContent');
+        return 0;
+    } else {
+        descriptionError.classList.add('alert','alert-danger' ,'mt-2' , 'descriptionContent');
+        return 1;
+    };
+}
