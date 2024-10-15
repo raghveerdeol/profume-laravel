@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProfumeRequest;
+use App\Models\Category;
 use App\Models\Profume;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 class ProfumeController extends Controller
 {
@@ -54,7 +56,10 @@ class ProfumeController extends Controller
     {
         $auth = auth()->user();
         if ($auth->id === $profume->user_id) {
-            return view('admin.profumes.show', compact('profume'));
+            $profume = Profume::with('category')->findOrFail($profume->id);
+            $categories = $profume->category;
+
+            return view('admin.profumes.show', compact('profume', 'categories'));
         };
     }
 

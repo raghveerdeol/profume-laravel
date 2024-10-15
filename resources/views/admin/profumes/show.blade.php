@@ -20,6 +20,10 @@
                         <span class="badge text-bg-success">Sponsored</span>
                     @endif
 
+                    @foreach ($categories as $category)
+                    <span class="badge text-bg-success"> {{ $category->name }} </span>
+                    @endforeach
+
                 </div>
             </div>
         </div>
