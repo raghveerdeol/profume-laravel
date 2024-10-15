@@ -1,0 +1,7 @@
+.nameContent::before{
+    content: "The characters of the name must be between 3 and 70";
+}
+
+.descriptionContent::before{
+    content: "The characters of the description must be between 10 and 5000";
+}
