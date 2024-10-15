@@ -1,8 +1,20 @@
 
 .nameContent::before{
     content: "The characters of the name must be between 4 and 70";
-    vertical-align: middle;
 }
 .priceContent::before{
     content: 'The price must be a number';
+}
+.quantityContent::before{
+    content: "The quantity must be integer and cannot be null";
+}
+.brandContent::before{
+    content: "The characters of the brand must be between 4 and 70";
+
+}
+.imageContent::before{
+    content: "The image cannot be null";
+}
+.descriptionContent::before{
+    content: "The characters of the description must be between 10 and 4000";
 }
