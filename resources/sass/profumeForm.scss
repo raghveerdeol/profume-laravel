@@ -1,0 +1,8 @@
+
+.nameContent::before{
+    content: "The characters of the name must be between 4 and 70";
+    vertical-align: middle;
+}
+.priceContent::before{
+    content: 'The price must be a number';
+}
