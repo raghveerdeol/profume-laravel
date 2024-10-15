@@ -70,7 +70,7 @@ function quantityValidation(quantity) {
 // brand input validation
 function brandValidation(brand) {
     let brandError = document.querySelector('div#brandError');
-    if ( brand && brand.length >= 2 && brand.length <= 100 ) {
+    if ( !brand || brand.length >= 2 && brand.length <= 100 ) {
         brandError.classList.remove('alert','alert-danger' ,'mt-2' , 'brandContent');
         return 0;
     } else {
@@ -82,7 +82,7 @@ function brandValidation(brand) {
 // image input validation
 function imageValidation(image) {
     let imageError = document.querySelector('div#imageError');
-    if ( image ) {
+    if ( !image ) {
         imageError.classList.remove('alert','alert-danger' ,'mt-2' , 'imageContent');
         return 0;
     } else {
@@ -94,7 +94,7 @@ function imageValidation(image) {
 // description input validation
 function descriptionValidation(description) {
     let descriptionError = document.querySelector('div#descriptionError');
-    if ( description.length >= 10 && description.length <= 4000) {
+    if ( !description || description.length >= 10 && description.length <= 4000) {
         descriptionError.classList.remove('alert','alert-danger' ,'mt-2' , 'descriptionContent');
         return 0;
     } else {
